@@ -1,38 +1,31 @@
-# FundMeOK
-An Ethereum-based crowdfunding platform
+# AcademicChain
+An academic records storage utility
 
 ## Description
 ### What?
 
-FundMeOK is a crowdfunding platform based on blockchain technologies. It allows people to solicit funds for an idea, charity, or start-up business. It is fully decentralized, secured, and trust worthy.
+AcademicChain is a record keeping utility and storage. It allows an authority to append student and class information to an immutable blockchain ledger. This allows students and faculty to view these records like a transcript, but also lets one pull useful statistics from the data such as overall GPA, class average, and popularity of a class.
 
 ### Why?
 
-There are so many crowdfunding scams on the internet nowadays. Backers have no controls on how the funds are used once they contribute to a project. We aim to solve the problems of existing crowdfunding platforms to make sure funds are used properly for project success and gain trust between manager and backers.
+The system of academic transcripts today leaves a lot to be desired. They are unintuitive, difficult to manage and cost money to do trivial things such as transfer data. AcademicChain aims to solve that by createing a blockchain-like structure to store transcript information that also allows one to generate other data such as class average and class GPA.
 
 ### How?
 
 FundMeOK is built on top of Ethereum platform. FundMe smart contract will be deployed on Ethereum nodes. A web app will be built for user to interact with the FundMe smart contract using web3.js interface in the backend. The framework and tools we expect to use are:
 
 Front End
-* HTML, LESS (or SASS)/CSS
-* JavaScript, React/React Native
+* Qt5, PySide2 python bindings
 
 Back end
-* NodeJS
-* Web3.js
-* IPFS
+* Python3
 
 Tools
-* Remix, Infura, Truffle
-* Visual Studio Code, Git/GitHub
-* Trello
-
-Miscellaneous
-* Ganache CLI, MetaMask
+* Visual Studio Code
+* Git/GitHub
 
 ## Deliverables
-
+### TODO
 1.	Web app
 * Project manager can create new campaigns
 * Project manager can create spending requests
@@ -54,6 +47,7 @@ Miscellaneous
 …
 
 ## Plan
+### TODO
 
 1.	Week 1: Write proposal, setup team Github repo. Decide on set of deliverables for MVP (Minimal Viable Product)
 2.	Week 2: Produce design document: frontend, backend, smart contract, workflow
@@ -65,6 +59,7 @@ Miscellaneous
 
 ## Team members
 
-* John Doe, Blockchain/Frontend Developer, Team Lead
-* Alex Max, Backend Developer, Tester
+* Ethan
+* Shaheer
+* Prabha
 
