@@ -1,19 +1,20 @@
-
+from Block import Block
 
 class Blockchain:
     def __init__(self):
         self.chain = []
-        self.genesis()
+        self.chain.append(Block.genesis())
 
-    def genesis(self):
-        b = Block()
-        b.hash = b.hash_block()
-        self.chain.append(b)
+    def get_block(self, index):
+        return self.chain[index]
 
-    @property
-    def last_block(self):
-        return self.chain[-1]
+    def add_block(self, new_block):
+        mined_block = Block.mine(new_block, self.chain[len(self.chain)-1])
+        self.chain.append(mined_block)
 
-    def add_block(self, block):
-        prevHash = self.last_block.hash
-        self.chain.append(block)
+    def __repr__(self):
+        out = "Blockchain< "
+        for b in range(len(self.chain)):
+            out=out+repr(self.chain[b])+" "
+        out=out+">"
+        return out
