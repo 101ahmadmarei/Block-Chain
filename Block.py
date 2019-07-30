@@ -3,13 +3,13 @@ import time
 
 
 class Block:
-    def __init__(self, timestamp, prevHash, data, nonce, difficulty, student_id, student_name, class_id, class_name, grade, absences, credits):
+    def __init__(self, timestamp, prevHash, data, difficulty, student_id, student_name, class_id, class_name, grade, absences, credits):
         self.height = 0
         self.timestamp = timestamp
         self.prevHash = prevHash
         self.currHash = 0
         self.data = data
-        self.nonce = nonce
+        self.nonce = 0
         self.difficulty = difficulty
         self.student_id=student_id
         self.student_name=student_name
@@ -24,7 +24,7 @@ class Block:
 
     @staticmethod
     def genesis():
-        return Block(0, 0, "genesis", 0, 1, 0, "None", "COMP0000", "None", 0, 0, 0)
+        return Block(0, 0, "genesis", 1, 0, "None", "COMP0000", "None", 0, 0, 0)
 
     @staticmethod
     def mine(block, last_block):
