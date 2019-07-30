@@ -1,7 +1,6 @@
 import sys
 import signal
-from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QGridLayout
-
+from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -9,10 +8,21 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("AcademicChain")
         self.resize(640, 480)
 
-        self.grid_layout = QGridLayout()
-        central_widget = QWidget()
-        central_widget.setLayout(self.grid_layout)
-        self.setCentralWidget(central_widget)
+        self.layout = QFormLayout()
+
+        self.lblStudentID = QLabel("Student ID")
+        self.layout.addWidget(self.lblStudentID)
+        self.txtStudentID = QLineEdit()
+        self.layout.addWidget(self.txtStudentID)
+
+        self.lblStudentName = QLabel("Student Name")
+        self.layout.addWidget(self.lblStudentName)
+        self.txtStudentName = QLineEdit()
+        self.layout.addWidget(self.txtStudentName)
+
+        central = QWidget()
+        central.setLayout(self.layout)
+        self.setCentralWidget(central)
 
         self.show()
 
