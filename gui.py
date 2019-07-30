@@ -1,6 +1,6 @@
 import sys
 import signal
-from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel, QPushButton
+from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel, QPushButton, QTabWidget
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -8,37 +8,38 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("AcademicChain")
         self.resize(640, 480)
 
-        self.layout = QFormLayout()
+        # Submit tab
+        self.submitLayout = QFormLayout()
 
         self.lblStudentID = QLabel("Student ID")
-        self.layout.addWidget(self.lblStudentID)
+        self.submitLayout.addWidget(self.lblStudentID)
         self.txtStudentID = QLineEdit()
-        self.layout.addWidget(self.txtStudentID)
+        self.submitLayout.addWidget(self.txtStudentID)
 
         self.lblStudentName = QLabel("Student Name")
-        self.layout.addWidget(self.lblStudentName)
+        self.submitLayout.addWidget(self.lblStudentName)
         self.txtStudentName = QLineEdit()
-        self.layout.addWidget(self.txtStudentName)
+        self.submitLayout.addWidget(self.txtStudentName)
 
         self.lblClassID = QLabel("Class ID")
-        self.layout.addWidget(self.lblClassID)
+        self.submitLayout.addWidget(self.lblClassID)
         self.txtClassID = QLineEdit()
-        self.layout.addWidget(self.txtClassID)
+        self.submitLayout.addWidget(self.txtClassID)
 
         self.lblGrade = QLabel("Grade")
-        self.layout.addWidget(self.lblGrade)
+        self.submitLayout.addWidget(self.lblGrade)
         self.txtGrade = QLineEdit()
-        self.layout.addWidget(self.txtGrade)
+        self.submitLayout.addWidget(self.txtGrade)
 
         self.lblAbsences = QLabel("Absences")
-        self.layout.addWidget(self.lblAbsences)
+        self.submitLayout.addWidget(self.lblAbsences)
         self.txtAbsences = QLineEdit()
-        self.layout.addWidget(self.txtAbsences)
+        self.submitLayout.addWidget(self.txtAbsences)
 
         self.lblCredits = QLabel("Credits")
-        self.layout.addWidget(self.lblCredits)
+        self.submitLayout.addWidget(self.lblCredits)
         self.txtCredits = QLineEdit()
-        self.layout.addWidget(self.txtCredits)
+        self.submitLayout.addWidget(self.txtCredits)
 
 
         def say_hello():                                                                                     
@@ -47,13 +48,36 @@ class MainWindow(QMainWindow):
 # Create a button, connect it and show it                                                           
         button = QPushButton("Submit data to chain")                                                                    
         button.clicked.connect(say_hello)
-        self.layout.addWidget(button)
+        self.submitLayout.addWidget(button)
 
-        
+        submit = QWidget()
+        submit.setLayout(self.submitLayout)
 
-        central = QWidget()
-        central.setLayout(self.layout)
-        self.setCentralWidget(central)
+        # Request tab
+        self.requestLayout = QFormLayout()
+
+        self.lblTest = QLabel("ethan")
+        self.requestLayout.addWidget(self.lblTest)
+
+        request = QWidget()
+        request.setLayout(self.requestLayout)
+
+        # Info tab
+        self.infoLayout = QFormLayout()
+
+        self.lblTest2 = QLabel("Test2")
+        self.infoLayout.addWidget(self.lblTest2)
+
+        info = QWidget()
+        info.setLayout(self.infoLayout)
+
+        # Tabs init
+        self.tab = QTabWidget()
+        self.tab.addTab(submit, "Submit")
+        self.tab.addTab(request, "Request")
+        self.tab.addTab(info, "Stats")
+
+        self.setCentralWidget(self.tab)
 
         self.show()
 
