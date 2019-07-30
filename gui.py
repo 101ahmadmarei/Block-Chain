@@ -1,6 +1,6 @@
 import sys
 import signal
-from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel
+from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel, QPushButton
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -19,6 +19,37 @@ class MainWindow(QMainWindow):
         self.layout.addWidget(self.lblStudentName)
         self.txtStudentName = QLineEdit()
         self.layout.addWidget(self.txtStudentName)
+
+        self.lblClassID = QLabel("Class ID")
+        self.layout.addWidget(self.lblClassID)
+        self.txtClassID = QLineEdit()
+        self.layout.addWidget(self.txtClassID)
+
+        self.lblGrade = QLabel("Grade")
+        self.layout.addWidget(self.lblGrade)
+        self.txtGrade = QLineEdit()
+        self.layout.addWidget(self.txtGrade)
+
+        self.lblAbsences = QLabel("Absences")
+        self.layout.addWidget(self.lblAbsences)
+        self.txtAbsences = QLineEdit()
+        self.layout.addWidget(self.txtAbsences)
+
+        self.lblCredits = QLabel("Credits")
+        self.layout.addWidget(self.lblCredits)
+        self.txtCredits = QLineEdit()
+        self.layout.addWidget(self.txtCredits)
+
+
+        def say_hello():                                                                                     
+            print("Button clicked, Hello!")                                                                    
+                                                                                                                                                                           
+# Create a button, connect it and show it                                                           
+        button = QPushButton("Submit data to chain")                                                                    
+        button.clicked.connect(say_hello)
+        self.layout.addWidget(button)
+
+        
 
         central = QWidget()
         central.setLayout(self.layout)
