@@ -83,17 +83,83 @@ class MainWindow(QMainWindow):
         # Request tab
         self.requestLayout = QFormLayout()
 
-        self.lblTest = QLabel("ethan")
-        self.requestLayout.addWidget(self.lblTest)
-
         request = QWidget()
         request.setLayout(self.requestLayout)
+
+        self.lblStudentID = QLabel("Student ID")
+        self.requestLayout.addWidget(self.lblStudentID)
+        self.txtSID = QLineEdit()
+        self.requestLayout.addWidget(self.txtStudentID)
+
+        self.lblStudentName = QLabel("Student Name")
+        self.requestLayout.addWidget(self.lblStudentName)
+        self.txtStudentName = QLineEdit()
+        self.requestLayout.addWidget(self.txtStudentName)
+
+        self.lblClassID = QLabel("Class ID")
+        self.requestLayout.addWidget(self.lblClassID)
+        self.txtClassID = QLineEdit()
+        self.requestLayout.addWidget(self.txtClassID)
+
+        self.lblClassName = QLabel("Class Name")
+        self.requestLayout.addWidget(self.lblClassName)
+        self.txtClassName = QLineEdit()
+        self.requestLayout.addWidget(self.txtClassName)
+
+        self.lblGrade = QLabel("Grade")
+        self.requestLayout.addWidget(self.lblGrade)
+        self.txtGrade = QLineEdit()
+        self.requestLayout.addWidget(self.txtGrade)
+
+        self.lblAbsences = QLabel("Absences")
+        self.requestLayout.addWidget(self.lblAbsences)
+        self.txtAbsences = QLineEdit()
+        self.requestLayout.addWidget(self.txtAbsences)
+
+        self.lblCredits = QLabel("Credits")
+        self.requestLayout.addWidget(self.lblCredits)
+        self.txtCredits = QLineEdit()
+        self.requestLayout.addWidget(self.txtCredits)
+
 
         # Info tab
         self.infoLayout = QFormLayout()
 
-        self.lblTest2 = QLabel("Test2")
-        self.infoLayout.addWidget(self.lblTest2)
+        self.lblStudentID = QLabel("Student ID")
+        self.infoLayout.addWidget(self.lblStudentID)
+        self.txtStudentID = QLineEdit()
+        self.infoLayout.addWidget(self.txtStudentID)
+
+        self.lblStudentName = QLabel("Student Name")
+        self.infoLayout.addWidget(self.lblStudentName)
+        self.txtStudentName = QLineEdit()
+        self.infoLayout.addWidget(self.txtStudentName)
+
+        self.lblClassID = QLabel("Class ID")
+        self.infoLayout.addWidget(self.lblClassID)
+        self.txtClassID = QLineEdit()
+        self.infoLayout.addWidget(self.txtClassID)
+
+        self.lblClassName = QLabel("Class Name")
+        self.infoLayout.addWidget(self.lblClassName)
+        self.txtClassName = QLineEdit()
+        self.infoLayout.addWidget(self.txtClassName)
+
+        self.lblGrade = QLabel("Grade")
+        self.infoLayout.addWidget(self.lblGrade)
+        self.txtGrade = QLineEdit()
+        self.infoLayout.addWidget(self.txtGrade)
+
+        self.lblAbsences = QLabel("Absences")
+        self.infoLayout.addWidget(self.lblAbsences)
+        self.txtAbsences = QLineEdit()
+        self.infoLayout.addWidget(self.txtAbsences)
+
+        self.lblCredits = QLabel("Credits")
+        self.infoLayout.addWidget(self.lblCredits)
+        self.txtCredits = QLineEdit()
+        self.infoLayout.addWidget(self.txtCredits)
+
 
         info = QWidget()
         info.setLayout(self.infoLayout)
