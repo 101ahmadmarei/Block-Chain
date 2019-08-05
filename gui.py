@@ -1,7 +1,7 @@
 import sys
 import signal
 import time
-from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel, QPushButton, QTabWidget
+from PySide2.QtWidgets import QApplication, QMainWindow, QWidget, QDesktopWidget, QLineEdit, QFormLayout, QLabel, QPushButton, QTabWidget, QTextEdit
 from Block import Block
 from Blockchain import Blockchain
 
@@ -59,18 +59,19 @@ class MainWindow(QMainWindow):
             #nonce
             difficulty = prevBlock.difficulty
             # Data from QLineEdits
-            student_id = self.txtStudentID.text()
-            student_name = self.txtStudentName.text()
-            class_id = self.txtClassID.text()
-            class_name = self.txtClassName.text()
-            grade = int(self.txtGrade.text())
-            absences = int(self.txtAbsences.text())
-            credits = int(self.txtCredits.text())
+            student_id = self.stxtStudentID.text()
+            student_name = self.stxtStudentName.text()
+            class_id = self.stxtClassID.text()
+            class_name = self.stxtClassName.text()
+            grade = int(self.stxtGrade.text())
+            absences = int(self.stxtAbsences.text())
+            credits = int(self.stxtCredits.text())
             
             block = Block(timestamp,prevHash,"lol",difficulty,student_id,student_name,class_id,class_name,grade,absences,credits)
             bc.add_block(block)
             print("Block added to chain")
             print(bc)
+            updateInfo()
 
 
         button = QPushButton("Submit data to chain") 
@@ -124,8 +125,13 @@ class MainWindow(QMainWindow):
         # Info tab
         self.infoLayout = QFormLayout()
 
-        self.ilblInfo = QLabel("Statistics")
-        self.infoLayout.addWidget(self.ilblInfo)
+        self.bcViewer = QTextEdit()
+        self.bcViewer.setReadOnly(1)
+        self.infoLayout.addWidget(self.bcViewer)
+
+        def updateInfo():
+            self.bcViewer.clear()
+            self.bcViewer.append(str(bc))
 
         info = QWidget()
         info.setLayout(self.infoLayout)
