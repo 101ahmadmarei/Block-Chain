@@ -20,7 +20,7 @@ class Block:
         self.credits=credits
 
     def __repr__(self):
-        return 'Block< height:{}, timestamp:{}, prevHash:{}, currHash:{}, data:{}, nonce:{}, difficulty:{}, student_id:{}, student_name:{}, class_id:{}, class_name:{}, grade:{}, absences:{}, credits:{} >'.format(self.height, self.timestamp, self.prevHash, self.currHash, self.data, self.nonce, self.difficulty, self.student_id, self.student_name, self.class_id, self.class_name, self.grade, self.absences, self.credits)
+        return 'Block<\n\t\theight:{}\n\t\ttimestamp:{}\n\t\tprevHash:{}\n\t\tcurrHash:{}\n\t\tdata:{}\n\t\tnonce:{}\n\t\tdifficulty:{}\n\t\tstudent_id:{}\n\t\tstudent_name:{}\n\t\tclass_id:{}\n\t\tclass_name:{}\n\t\tgrade:{}\n\t\tabsences:{}\n\t\tcredits:{}\n\t>\n'.format(self.height, self.timestamp, self.prevHash, self.currHash, self.data, self.nonce, self.difficulty, self.student_id, self.student_name, self.class_id, self.class_name, self.grade, self.absences, self.credits)
 
     @staticmethod
     def genesis():

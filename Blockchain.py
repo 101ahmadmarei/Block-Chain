@@ -13,8 +13,8 @@ class Blockchain:
         self.chain.append(mined_block)
 
     def __repr__(self):
-        out = "Blockchain< "
+        out = "Blockchain<\n"
         for b in range(len(self.chain)):
-            out=out+repr(self.chain[b])+" "
+            out=out+"\t"+repr(self.chain[b])
         out=out+">"
         return out

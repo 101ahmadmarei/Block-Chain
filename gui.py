@@ -50,6 +50,15 @@ class MainWindow(QMainWindow):
         self.stxtCredits = QLineEdit()
         self.submitLayout.addWidget(self.stxtCredits)
 
+        def clearFields():
+            self.stxtStudentID.clear()
+            self.stxtStudentName.clear()
+            self.stxtClassID.clear()
+            self.stxtClassName.clear()
+            self.stxtGrade.clear()
+            self.stxtAbsences.clear()
+            self.stxtCredits.clear()
+
         def say_hello(): 
             prevBlock = bc.get_block(0)
             height = prevBlock.height+1
@@ -70,8 +79,9 @@ class MainWindow(QMainWindow):
             block = Block(timestamp,prevHash,"lol",difficulty,student_id,student_name,class_id,class_name,grade,absences,credits)
             bc.add_block(block)
             print("Block added to chain")
-            print(bc)
+            #print(bc)
             updateInfo()
+            clearFields()
 
 
         button = QPushButton("Submit data to chain") 
@@ -124,6 +134,7 @@ class MainWindow(QMainWindow):
 
         # Info tab
         self.infoLayout = QFormLayout()
+#        self.infoLayout.setFieldGrowthPolicy(QtWidgets.QFormLayout.AllNonFixedFieldsGrow) 
 
         self.bcViewer = QTextEdit()
         self.bcViewer.setReadOnly(1)
