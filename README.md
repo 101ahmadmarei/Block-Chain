@@ -8,19 +8,19 @@ Academic Chain is an application designed to store and retrieve academic records
 There are rarely cases where academic records need to be removed from a database. Because of this, a blockchain structure is perfect to store records of this type. Faculty can append information indefinitely and the record can follow students easily as they make their way through academia’s ranks. A record of this type would be useful for transfer students, or to corporations looking to vet new employees. 
 
 ### How?
-A blockchain structure will be appended to as students complete their courses. A user interface will allow these students and faculty to search for data in these records and manipulate them. Some frameworks/libraries we plan to use are:
+A blockchain structure will be appended to as students complete their courses. A user interface will allow these students and faculty to search for data in these records and manipulate them. Some frameworks/libraries we plan to use are: Python3 and PySide2.
 
 
 ### Deliverables
 #### Front end
-PySide2 (Qt5 bindings for Python3)
+* PySide2 (Qt5 bindings for Python3)
 
 #### Back end
-Python3
+* Python3
 
 #### Tools
-Git
-Vim
+* Git
+* Vim
 
 ### Getting Started 
 #### Run:
@@ -49,9 +49,13 @@ $ python3 gui.py
 * View raw blockchain
 
 ### Demo
+#### The data submission page
 ![Submit page](demo/submit.png)
+#### The data request page
 ![Request page](demo/request.png)
+#### The result of a user/class ID query
 ![Query page](demo/query.png)
+#### The stats page, a text representation of the blockchain structure
 ![Stats page](demo/stats.png)
 
 ### Team Members
