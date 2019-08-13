@@ -59,6 +59,6 @@ $ python3 gui.py
 ![Stats page](demo/stats.png)
 
 ### Team Members
-Ethan Smith
-Prabha Neuprane
-Shaheer Khawaja
+* Ethan Smith
+* Prabha Neuprane
+* Shaheer Khawaja
