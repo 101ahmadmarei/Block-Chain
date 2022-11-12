@@ -1,5 +1,4 @@
 from Block import Block
-
 class Blockchain:
     def __init__(self):
         self.chain = []
@@ -14,11 +13,6 @@ class Blockchain:
 
     def get_length(self):
         return len(self.chain)
-
-#    def get_gpa(self, student_id):
-#        for b in range(len(self.chain)):
-#            print(b)
-#        return 90
 
     def __repr__(self):
         out = "Blockchain<\n"
